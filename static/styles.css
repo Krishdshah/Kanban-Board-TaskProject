@@ -1,0 +1,123 @@
+/* Reset */
+body, h1, h2, p, ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #2c3e50;
+  color: white;
+}
+header h1 { font-size: 1.5rem; }
+header button {
+  background: #27ae60;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+header button:hover { background: #219150; }
+
+/* Board Layout */
+.board {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+.column {
+  flex: 1;
+  background: #ecf0f1;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.column h2 {
+  margin-bottom: 0.5rem;
+}
+.task-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Task Card */
+.task {
+  background: white;
+  border-radius: 8px;
+  padding: 0.8rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: grab;
+}
+.task.dragging { opacity: 0.5; }
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-priority.low { color: green; }
+.task-priority.medium { color: orange; }
+.task-priority.high { color: red; }
+.task-footer {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal.hidden { display: none; }
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+}
+.modal-content .close {
+  position: absolute;
+  top: 10px; right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.modal-content input, .modal-content textarea, .modal-content select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.modal-content button {
+  background: #2980b9;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+.modal-content button:hover { background: #216695; }
