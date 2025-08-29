@@ -1,16 +1,7 @@
 from flask import Blueprint, request, jsonify
-import mysql.connector
-from config import Config
+from models.task_model import get_db_connection
 
 api_bp = Blueprint("api", __name__)
-
-def get_db_connection():
-    return mysql.connector.connect(
-        host=Config.DB_HOST,
-        user=Config.DB_USER,
-        password=Config.DB_PASSWORD,
-        database=Config.DB_NAME
-    )
 
 # GET all tasks
 @api_bp.route("/tasks", methods=["GET"])

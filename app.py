@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from api.routes import api_bp
+from api.api import api_bp
 from config import Config
 
 def create_app():

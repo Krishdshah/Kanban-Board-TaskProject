@@ -34,25 +34,24 @@ It helps users organize tasks visually using columns like **To Do**, **In Progre
 ---
 
 ## 📂 Project Structure
+
 Kanban-Board/
 │── app.py
 │── config.py
-│── requirements.txt
 │── create_tables.py
+│── requirements.txt
+│── .env.example
 │── .gitignore
 │
 ├── api/
-│   ├── __init__.py
-│   └── routes.py
-│
+│ └── api.py
+├── models/
+│ └── task_model.py
 ├── templates/
-│   └── index.html
-│
+│ └── index.html
 └── static/
-    ├── css/
-    │   └── style.css
-    └── js/
-        └── script.js
+├── style.css
+└── script.js
 
 ---
 

@@ -2,25 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kanban Board</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>🌈 Kanban Board</h1>
-  <div id="board">
-    <div class="column" data-status="To Do">
-      <h2>To Do</h2>
-      <div class="task-list" id="todo"></div>
+  <header>
+    <h1>🚀 Kanban Task Board</h1>
+  </header>
+
+  <section class="task-form">
+    <input type="text" id="title" placeholder="Task Title">
+    <input type="text" id="description" placeholder="Description">
+    <select id="priority">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+    <input type="date" id="due_date">
+    <button onclick="addTask()">➕ Add Task</button>
+  </section>
+
+  <main class="kanban-board">
+    <div class="column" id="todo">
+      <h2>📝 To Do</h2>
+      <div class="task-list" id="todo-list"></div>
     </div>
-    <div class="column" data-status="In Progress">
-      <h2>In Progress</h2>
-      <div class="task-list" id="inprogress"></div>
+
+    <div class="column" id="inprogress">
+      <h2>⚡ In Progress</h2>
+      <div class="task-list" id="inprogress-list"></div>
     </div>
-    <div class="column" data-status="Done">
-      <h2>Done</h2>
-      <div class="task-list" id="done"></div>
+
+    <div class="column" id="done">
+      <h2>✅ Done</h2>
+      <div class="task-list" id="done-list"></div>
     </div>
-  </div>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
