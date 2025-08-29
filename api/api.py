@@ -17,11 +17,25 @@ def get_tasks():
 @api_bp.route("/tasks", methods=["POST"])
 def add_task():
     data = request.get_json()
+
+    # Clean up inputs
+    title = data.get("title", "Untitled Task")
+    description = data.get("description", "")
+    priority = data.get("priority", "Low")
+
+    # Handle NULL date instead of empty string
+    due_date = data.get("due_date") or None  
+
+    # Force valid status
+    status = data.get("status", "To Do")
+    if status not in ["To Do", "In Progress", "Done"]:
+        status = "To Do"
+
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute(
         "INSERT INTO tasks (title, description, priority, due_date, status) VALUES (%s, %s, %s, %s, %s)",
-        (data["title"], data.get("description",""), data.get("priority","Low"), data.get("due_date", None), data.get("status","To Do"))
+        (title, description, priority, due_date, status)
     )
     conn.commit()
     conn.close()

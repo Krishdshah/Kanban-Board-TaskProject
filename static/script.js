@@ -5,6 +5,16 @@ async function fetchTasks() {
   document.getElementById("todo-list").innerHTML = "";
   document.getElementById("inprogress-list").innerHTML = "";
   document.getElementById("done-list").innerHTML = "";
+  const statusOptions = ["To Do", "In Progress", "Done"];
+
+  // When adding a task
+  const newTask = {
+    title: titleInput.value,
+    description: descriptionInput.value,
+    priority: prioritySelect.value || "Low",
+    due_date: dueDateInput.value || null,
+    status: statusOptions.includes(statusSelect.value) ? statusSelect.value : "To Do"
+  };
 
   tasks.forEach(task => {
     const div = document.createElement("div");
