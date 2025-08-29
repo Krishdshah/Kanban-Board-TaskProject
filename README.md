@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)  
 
 A simple and colorful **Kanban Board** web application built with **Flask (Python)**, **MySQL**, and **HTML/CSS/JavaScript**.  
-It helps users organize tasks visually using columns like **To Do**, **In Progress**, and **Done** — similar to Trello.  
+It helps users organize tasks visually using columns like **To Do**, **In Progress**, and **Done**.  
 
 ---
 
@@ -20,8 +20,9 @@ It helps users organize tasks visually using columns like **To Do**, **In Progre
 - 🎨 **Responsive & Colorful UI**  
 - 🔧 **Extensible for Future Features**:
   - Multiple boards  
+ # Upcoming:
   - Multi-user collaboration  
-  - Cloud sync  
+  - Cloud Sync
 
 ---
 
@@ -34,22 +35,24 @@ It helps users organize tasks visually using columns like **To Do**, **In Progre
 
 ## 📂 Project Structure
 Kanban-Board/
-│── app.py # Flask app entry point
-│── config.py # MySQL configuration
-│── create_tables.py # Script to create DB tables
-│── requirements.txt # Dependencies
-│── README.md # Documentation
-│── .gitignore # Ignore unnecessary files
+│── app.py
+│── config.py
+│── requirements.txt
+│── create_tables.py
+│── .gitignore
 │
-├── static/ # Static assets
-│ ├── css/
-│ │ └── style.css # Custom styles
-│ └── js/
-│ └── script.js # Frontend logic (drag-drop, API calls)
+├── api/
+│   ├── __init__.py
+│   └── routes.py
 │
-├── templates/ # HTML templates
-│ └── index.html # Main Kanban board UI
-
+├── templates/
+│   └── index.html
+│
+└── static/
+    ├── css/
+    │   └── style.css
+    └── js/
+        └── script.js
 
 ---
 

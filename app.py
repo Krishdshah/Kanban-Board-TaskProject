@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from api import api_bp
+from api.routes import api_bp
 from config import Config
 
 def create_app():
@@ -13,8 +13,8 @@ def create_app():
     @app.route("/")
     def index():
         return render_template("index.html")
-    return app
 
+    return app
 
 if __name__ == "__main__":
     app = create_app()

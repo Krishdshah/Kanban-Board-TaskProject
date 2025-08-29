@@ -10,6 +10,7 @@ ENV/
 .venv/
 virtualEnvironment/
 
+
 # Environment variables
 .env
 *.env
@@ -31,6 +32,9 @@ dist/
 
 # Logs
 *.log
+
+# Instance 
+instance/
 
 # Database dumps / backups
 *.sql
